@@ -7,10 +7,17 @@ def preWork():
     return "fail"
 
 
-def test_initialCheck(preWork):
+@pytest.fixture(scope="function")
+def secondWork():
+    print("I setup module instance")
+    yield
+    print("tear donw validation")
+
+
+def test_initialCheck(preWork, secondWork):
     print("This is first test")
     assert preWork == "fail"
 
 
-def test_secondCheck(preSetupWork):
+def test_secondCheck(preSetupWork, secondWork):
     print("This is the second test")

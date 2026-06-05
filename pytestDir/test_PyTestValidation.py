@@ -14,10 +14,12 @@ def secondWork():
     print("tear donw validation")
 
 
+@pytest.mark.smoke
 def test_initialCheck(preWork, secondWork):
     print("This is first test")
     assert preWork == "fail"
 
 
+@pytest.mark.skip
 def test_secondCheck(preSetupWork, secondWork):
     print("This is the second test")

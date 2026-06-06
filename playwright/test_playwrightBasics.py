@@ -9,5 +9,5 @@ def test_playwrightBasics(playwright):
 
 
 # chromium headless mode, 1 single context
-def test_playwrightShortCut(page):
+def test_playwrightShortCut(page: Page):
     page.goto("https://rahulshettyacademy.com")

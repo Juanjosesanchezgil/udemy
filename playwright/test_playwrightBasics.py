@@ -10,4 +10,12 @@ def test_playwrightBasics(playwright):
 
 # chromium headless mode, 1 single context
 def test_playwrightShortCut(page: Page):
-    page.goto("https://rahulshettyacademy.com")
+    page.goto("https://rahulshettyacademy.com")  # type: ignore
+
+
+def test_coreLocators(page: Page):
+    page.goto(
+        "https://rahulshettyacademy.com/loginpagePractise/")  # type: ignore
+    page.get_by_label("Username:").fill("rahulshettyacademy")
+    page.get_by_label("Password:").fill("learning")
+    page.get_by_role("combobox").select_option("teach")

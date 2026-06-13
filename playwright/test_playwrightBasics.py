@@ -1,4 +1,5 @@
 from playwright.async_api import Page
+import time
 
 
 def test_playwrightBasics(playwright):
@@ -17,5 +18,8 @@ def test_coreLocators(page: Page):
     page.goto(
         "https://rahulshettyacademy.com/loginpagePractise/")  # type: ignore
     page.get_by_label("Username:").fill("rahulshettyacademy")
-    page.get_by_label("Password:").fill("learning")
+    page.get_by_label("Password:").fill("Learning@830$3mK2")
     page.get_by_role("combobox").select_option("teach")
+    page.get_by_role("button", name="Sign in").click()
+
+    time.sleep(5)
